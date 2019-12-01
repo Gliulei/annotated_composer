@@ -24,6 +24,9 @@ use Composer\Package\Dumper\ArrayDumper;
  */
 class FilesystemRepository extends WritableArrayRepository
 {
+    /**
+     * @var JsonFile($vendorDir.'/composer/installed.json', null, $io))
+     */
     private $file;
 
     /**

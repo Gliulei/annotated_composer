@@ -211,15 +211,25 @@ class Installer
         $this->downloadManager->setPreferDist($this->preferDist);
 
         // create installed repo, this contains all local packages + platform packages (php & extensions)
+        /**
+         * Composer\Repository\InstalledFilesystemRepository
+         */
         $localRepo = $this->repositoryManager->getLocalRepository();
         if ($this->update) {
             $platformOverrides = $this->config->get('platform') ?: array();
         } else {
+            /**
+             * array(1) {
+            ["php"]=>
+            string(5) "5.3.9"
+            }
+             */
             $platformOverrides = $this->locker->getPlatformOverrides();
         }
         $platformRepo = new PlatformRepository(array(), $platformOverrides);
         $installedRepo = $this->createInstalledRepo($localRepo, $platformRepo);
 
+        var_dump(count($installedRepo->getPackages()));exit;
         $aliases = $this->getRootAliases();
         $this->aliasPlatformPackages($platformRepo, $aliases);
 
