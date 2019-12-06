@@ -424,6 +424,7 @@ EOT
                         $requirement['name']
                     ));
                 } else {
+                    var_dump('start');
                     // check that the specified version/constraint exists before we proceed
                     list($name, $version) = $this->findBestVersionAndNameForPackage($input, $requirement['name'], $phpVersion, $preferredStability, $checkProvidedVersions ? $requirement['version'] : null, 'dev', $fixed);
 

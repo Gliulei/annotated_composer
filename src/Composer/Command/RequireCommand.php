@@ -160,7 +160,9 @@ EOT
 
         $phpVersion = $this->repos->findPackage('php', '*')->getPrettyVersion();
         try {
+            var_dump($phpVersion);
             $requirements = $this->determineRequirements($input, $output, $input->getArgument('packages'), $phpVersion, $preferredStability, !$input->getOption('no-update'), $input->getOption('fixed'));
+            var_dump($requirements);exit;
         } catch (\Exception $e) {
             if ($this->newlyCreated) {
                 throw new \RuntimeException('No composer.json present in the current directory, this may be the cause of the following exception.', 0, $e);

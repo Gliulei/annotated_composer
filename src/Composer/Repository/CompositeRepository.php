@@ -115,8 +115,6 @@ class CompositeRepository extends BaseRepository
     {
         $packages = array();
         foreach ($this->repositories as $repository) {
-            var_dump(get_class($repository));
-            var_dump(count($repository->getPackages()));exit;
             /* @var $repository RepositoryInterface */
             $packages[] = $repository->getPackages();
         }

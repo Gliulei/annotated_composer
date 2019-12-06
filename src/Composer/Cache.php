@@ -33,7 +33,7 @@ class Cache
 
     /**
      * @param IOInterface $io
-     * @param string      $cacheDir   location of the cache
+     * @param string      $cacheDir   location of the cache /Users/MOMO/.composer/cache/repo/https---mirrors.aliyun.com-composer
      * @param string      $whitelist  List of characters that are allowed in path names (used in a regex character class)
      * @param Filesystem  $filesystem optional filesystem instance
      */
