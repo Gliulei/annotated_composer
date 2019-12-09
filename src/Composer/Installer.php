@@ -229,7 +229,6 @@ class Installer
         $platformRepo = new PlatformRepository(array(), $platformOverrides);
         $installedRepo = $this->createInstalledRepo($localRepo, $platformRepo);
 
-        var_dump(count($installedRepo->getPackages()));exit;
         $aliases = $this->getRootAliases();
         $this->aliasPlatformPackages($platformRepo, $aliases);
 

@@ -299,7 +299,6 @@ class AliasPackage extends BasePackage implements CompletePackageInterface
 
     public function setDistMirrors($mirrors)
     {
-        var_dump(get_class($this->aliasOf));
         return $this->aliasOf->setDistMirrors($mirrors);
     }
 

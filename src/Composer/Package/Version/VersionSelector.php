@@ -52,7 +52,6 @@ class VersionSelector
 
         $candidates = $this->pool->whatProvides(strtolower($packageName), $constraint, true);
 
-        var_dump('111');exit;
         if ($targetPhpVersion) {
             $phpConstraint = new Constraint('==', $this->getParser()->normalize($targetPhpVersion));
             $candidates = array_filter($candidates, function ($pkg) use ($phpConstraint) {
