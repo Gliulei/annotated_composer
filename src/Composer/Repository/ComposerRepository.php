@@ -334,8 +334,6 @@ class ComposerRepository extends ArrayRepository implements ConfigurableReposito
                 return array();
             }
 
-            var_dump($useLastModifiedCheck);
-            var_dump($cacheKey);
             $packages = null;
             if ($cacheKey) {
                 if (!$useLastModifiedCheck && $hash && $this->cache->sha256($cacheKey) === $hash) {
@@ -373,7 +371,6 @@ class ComposerRepository extends ArrayRepository implements ConfigurableReposito
             $loadingPartialPackage = true;
         }
 
-        var_dump($bypassFilters);
         $this->providers[$name] = array();
         foreach ($packages['packages'] as $versions) {
             foreach ($versions as $version) {
@@ -655,7 +652,6 @@ class ComposerRepository extends ArrayRepository implements ConfigurableReposito
                 $package->setSourceMirrors($this->sourceMirrors[$package->getSourceType()]);
             }
             $package->setDistMirrors($this->distMirrors);
-            var_dump($package->getDistUrls());
             $this->configurePackageTransportOptions($package);
 
             return $package;
